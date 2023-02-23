@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("./Cormorant.ttf") format("truetype");
+  src: url("./fonts/Cormorant.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: fallback;

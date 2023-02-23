@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <StyledNavbar>
-      <h1>My App</h1>
+      <h1>Ethereum Dashboard</h1>
       <Button
         disabled={connecting}
         onClick={() => (wallet ? disconnect(wallet) : connect())}
