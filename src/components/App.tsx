@@ -1,18 +1,17 @@
-import useOnboard from "../hooks/useOnboard";
+import styled from "styled-components";
+
+import Navbar from "./Navbar";
 
 function App() {
-  const { wallet, connecting, connect, disconnect } = useOnboard();
-
   return (
-    <div>
-      <button
-        disabled={connecting}
-        onClick={() => (wallet ? disconnect(wallet) : connect())}
-      >
-        {connecting ? "connecting" : wallet ? "disconnect" : "connect"}
-      </button>
-    </div>
+    <AppWrapper>
+      <Navbar />
+    </AppWrapper>
   );
 }
 
+const AppWrapper = styled.div`
+  background-color: #000;
+  width: 100%;
+`;
 export default App;
