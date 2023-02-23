@@ -18,10 +18,12 @@ const Navbar = () => {
 };
 
 const StyledNavbar = styled.nav`
-  background-color: #000;
-  color: #fff;
+  background-color: var(--black);
+  padding: 1rem;
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
+
 export default Navbar;
