@@ -20,7 +20,7 @@ init({
   ],
 });
 
-function App() {
+export default function useOnboard() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
 
   if (wallet) {
@@ -28,16 +28,10 @@ function App() {
     console.log("ethersProvider", ethers);
   }
 
-  return (
-    <div>
-      <button
-        disabled={connecting}
-        onClick={() => (wallet ? disconnect(wallet) : connect())}
-      >
-        {connecting ? "connecting" : wallet ? "disconnect" : "connect"}
-      </button>
-    </div>
-  );
+  return {
+    wallet,
+    connecting,
+    connect,
+    disconnect,
+  };
 }
-
-export default App;
