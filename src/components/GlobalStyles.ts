@@ -150,10 +150,14 @@ html, body, #__next {
 }
 /* Global style definitions */
   /*  All CSS custom properties that are intended to be global must be defined here */
+  // Colors found here: https://colorhunt.co/palette/181823537fe7c0eef2e9f8f9
   html {
     /* Colors */
     --black: #181823;
     --white: #fff;
+    --blue: #537fe7;
+    --mint: #c0eeF2;
+    --light-grey: #e9f8f9;
   }
   body {
   }

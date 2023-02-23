@@ -10,6 +10,14 @@ const rpcUrl = `https://mainnet.infura.io/v3/${infuraKey}`;
 // initialize Onboard
 init({
   wallets: [injected],
+  accountCenter: {
+    desktop: {
+      enabled: false,
+    },
+    mobile: {
+      enabled: false,
+    },
+  },
   chains: [
     {
       id: "0x1",
