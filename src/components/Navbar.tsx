@@ -24,6 +24,7 @@ const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Halyard Display";
 `;
 
 const Button = styled.button`
