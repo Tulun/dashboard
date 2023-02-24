@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { init, useConnectWallet } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
 import { ethers } from "ethers";
@@ -30,16 +31,22 @@ init({
 
 export default function useOnboard() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
+  const [provider, setProvider] = useState<ethers.providers.Web3Provider>();
 
-  if (wallet) {
-    // ethersProvider = new ethers.providers.Web3Provider(wallet.provider, "any");
-    console.log("ethersProvider", ethers);
-  }
+  useEffect(() => {
+    if (wallet && !provider) {
+      setProvider(new ethers.providers.Web3Provider(wallet.provider as any));
+    }
+    if (!wallet && provider) {
+      setProvider(undefined);
+    }
+  }, [wallet, provider]);
 
   return {
     wallet,
     connecting,
     connect,
     disconnect,
+    provider,
   };
 }
