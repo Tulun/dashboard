@@ -1,3 +1,13 @@
+# Important ENVs
+
+Required:
+
+Infura key for blockchain data requests. See [Infura](https://www.infura.io/).
+REACT_APP_INFURA_KEY=
+
+Handling wallet connections. See [Blocknative](https://www.blocknative.com/).
+REACT_APP_BLOCKNATIVE_KEY=
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
