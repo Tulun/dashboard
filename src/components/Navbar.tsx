@@ -24,12 +24,11 @@ const Navbar = () => {
 
 const StyledNavbar = styled.nav`
   background-color: var(--black);
-  padding: 1rem;
+  padding: 1rem 3rem;
   color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Halyard Display";
 `;
 
 const Button = styled.button`

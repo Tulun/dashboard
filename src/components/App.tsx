@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 import Navbar from "./Navbar";
 import { GlobalStyle } from "./GlobalStyles";
+
+import Dashboard from "./Dashboard";
 function App() {
   return (
     <AppWrapper>
       <GlobalStyle />
       <Navbar />
+      <Dashboard />
     </AppWrapper>
   );
 }
