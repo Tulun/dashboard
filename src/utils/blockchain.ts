@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import { saveBlock } from "./db";
+
 export async function getLogs(
   provider: ethers.providers.Web3Provider,
   address: string,
@@ -17,15 +18,11 @@ export async function getLogs(
   return logs;
 }
 
-// const AVERAGE_NUMBER_BLOCKS_ETHEREUM = 7118;
-
 export async function getBlock(
   provider: ethers.providers.Web3Provider,
   blockNumber?: number
 ) {
   const block = await provider.getBlock("latest");
-  console.log("block", block);
-
   // Attempt to save block to local storage if not cached
   saveBlock(block);
 

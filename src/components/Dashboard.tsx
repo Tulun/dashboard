@@ -2,8 +2,8 @@ import styled from "styled-components";
 import useOnboard from "src/hooks/useOnboard";
 import useDashboard from "src/hooks/useDashboard";
 const Dashboard = () => {
-  const { provider } = useOnboard();
-  useDashboard(provider);
+  const { provider, wallet } = useOnboard();
+  useDashboard(provider, wallet?.accounts[0].address);
 
   return (
     <DashboardWrapper>

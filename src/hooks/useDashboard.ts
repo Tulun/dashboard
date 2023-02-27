@@ -3,23 +3,31 @@ import { ethers } from "ethers";
 import { getBlock } from "src/utils/blockchain";
 
 export default function useDashboard(
-  provider: ethers.providers.Web3Provider | undefined
+  provider: ethers.providers.Web3Provider | undefined,
+  address: string | undefined
 ) {
   useEffect(() => {
-    if (provider) {
+    if (provider && address) {
       const fetchBlock = async () => {
-        const logs = await getBlock(provider);
-        console.log("logs", logs);
+        const block = await getBlock(provider);
+
+        return block;
       };
       fetchBlock();
+      const getAddressTransactions = async () => {
+        const etherscanProvider = new ethers.providers.EtherscanProvider();
+        const transactions = await etherscanProvider.getHistory(address);
+        console.log("transactions", transactions);
+      };
+      getAddressTransactions();
       const interval = setInterval(() => {
         fetchBlock();
-      }, 20000);
+      }, 8000);
       return () => {
         clearInterval(interval);
       };
     }
-  }, [provider]);
+  }, [provider, address]);
 
   return {};
 }
