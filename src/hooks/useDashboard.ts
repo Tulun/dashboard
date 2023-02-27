@@ -12,6 +12,12 @@ export default function useDashboard(
         console.log("logs", logs);
       };
       fetchBlock();
+      const interval = setInterval(() => {
+        fetchBlock();
+      }, 20000);
+      return () => {
+        clearInterval(interval);
+      };
     }
   }, [provider]);
 
