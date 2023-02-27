@@ -8,24 +8,24 @@ export default function useDashboard(
 ) {
   useEffect(() => {
     if (provider && address) {
-      const fetchBlock = async () => {
-        const block = await getBlock(provider);
-
-        return block;
-      };
-      fetchBlock();
       const getAddressTransactions = async () => {
         const etherscanProvider = new ethers.providers.EtherscanProvider();
         const transactions = await etherscanProvider.getHistory(address);
         console.log("transactions", transactions);
       };
       getAddressTransactions();
-      const interval = setInterval(() => {
-        fetchBlock();
-      }, 10000);
-      return () => {
-        clearInterval(interval);
-      };
+      // const fetchBlock = async () => {
+      //   const block = await getBlock(provider);
+
+      //   return block;
+      // };
+      // fetchBlock();
+      // const interval = setInterval(() => {
+      //   fetchBlock();
+      // }, 10000);
+      // return () => {
+      //   clearInterval(interval);
+      // };
     }
   }, [provider, address]);
 
