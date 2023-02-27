@@ -1,35 +1,19 @@
 import { useEffect } from "react";
 import { ethers } from "ethers";
+import { getBlock } from "src/utils/blockchain";
 
-export default function (provider: ethers.providers.Web3Provider | undefined) {
+export default function useDashboard(
+  provider: ethers.providers.Web3Provider | undefined
+) {
   useEffect(() => {
     if (provider) {
-      // const fetchLogs = async () => {
-      //   const logs = await getLogs(provider);
-      //   console.log("logs", logs);
-      // };
-      // fetchLogs();
+      const fetchBlock = async () => {
+        const logs = await getBlock(provider);
+        console.log("logs", logs);
+      };
+      fetchBlock();
     }
   }, [provider]);
 
   return {};
-}
-
-const AVERAGE_NUMBER_BLOCKS_ETHEREUM = 7118;
-
-async function getLogs(
-  provider: ethers.providers.Web3Provider,
-  address: string,
-  toBlock: number,
-  fromBlock: number
-) {
-  const filter = {
-    fromBlock,
-    toBlock,
-    address,
-  };
-
-  const logs = await provider.getLogs(filter);
-
-  return logs;
 }

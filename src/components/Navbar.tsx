@@ -5,7 +5,6 @@ import { shortenAddress } from "src/helpers";
 const Navbar = () => {
   const { wallet, connecting, connect, disconnect } = useOnboard();
 
-  console.log("wallet", wallet);
   return (
     <StyledNavbar>
       <h1>Ethereum Dashboard</h1>
