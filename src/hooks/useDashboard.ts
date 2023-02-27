@@ -22,7 +22,7 @@ export default function useDashboard(
       getAddressTransactions();
       const interval = setInterval(() => {
         fetchBlock();
-      }, 8000);
+      }, 10000);
       return () => {
         clearInterval(interval);
       };
