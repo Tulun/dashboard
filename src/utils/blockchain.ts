@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-
+import { saveBlock } from "./db";
 export async function getLogs(
   provider: ethers.providers.Web3Provider,
   address: string,
@@ -25,5 +25,9 @@ export async function getBlock(
 ) {
   const block = await provider.getBlock("latest");
   console.log("block", block);
+
+  // Attempt to save block to local storage if not cached
+  saveBlock(block);
+
   return block;
 }
