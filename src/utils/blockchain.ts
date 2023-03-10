@@ -28,3 +28,16 @@ export async function getBlock(
 
   return block;
 }
+
+export function calculateAverageGasPrice(
+  blocks: ethers.providers.Block[]
+): number {
+  // const gasPrices = blocks.map((block) => block.gasPrice.toNumber());
+  const baseFeePerGas = blocks.map(
+    (block) => block.baseFeePerGas?.toNumber() || 0
+  );
+  const gasUsed = blocks.map((block) => block.gasUsed.toNumber());
+  console.log("baseFeePerGas", baseFeePerGas);
+  console.log("gasUsed", gasUsed);
+  return 0;
+}

@@ -16,7 +16,7 @@ export default function useDashboard(
       getAddressTransactions();
       // const fetchBlock = async () => {
       //   const block = await getBlock(provider);
-
+      //   console.log("block", block);
       //   return block;
       // };
       // fetchBlock();
