@@ -23,11 +23,13 @@ const DashboardWrapper = styled.div`
   padding: 2rem 3rem;
   color: var(--white);
   min-height: 40vh;
+  width: 100%;
 `;
 
 const ChartWrapper = styled.div`
   background-color: var(--white);
   padding: 2rem 3rem;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  position: relative;
 `;
