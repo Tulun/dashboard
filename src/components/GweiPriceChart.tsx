@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -8,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { blockCache } from "src/utils/db";
 
 const data = [
   {
@@ -55,6 +57,11 @@ const data = [
 ];
 
 const GweiPriceChart = () => {
+  useEffect(() => {
+    blockCache.iterate((value, key, iterationNumber) => {
+      console.log([key, value]);
+    });
+  }, []);
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart

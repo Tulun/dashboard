@@ -1,7 +1,7 @@
 import localForage from "localforage";
 import { ethers } from "ethers";
 
-const blockCache = localForage.createInstance({
+export const blockCache = localForage.createInstance({
   name: "blockcache",
   storeName: "blocks",
 });
