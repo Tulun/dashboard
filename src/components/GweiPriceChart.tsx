@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { blockCache } from "src/utils/db";
+import { ethers } from "ethers";
 
 const data = [
   {
@@ -58,8 +59,17 @@ const data = [
 
 const GweiPriceChart = () => {
   useEffect(() => {
-    blockCache.iterate((value, key, iterationNumber) => {
-      console.log([key, value]);
+    blockCache.iterate((value: any, key, iterationNumber) => {
+      // console.log(
+      //   "baseFee",
+      //   ethers.BigNumber.from(value.baseFeePerGas._hex).toString()
+      // );
+      // console.log(
+      //   "gaslimit",
+      //   ethers.BigNumber.from(value.gasUsed._hex).toString()
+      // );
+      // console.log("extraData", value.extraData);
+      // console.log([key, value]);
     });
   }, []);
   return (
